@@ -3,6 +3,7 @@ A todo app built using swiftUI and makes use of user defaults to save user data 
 I used user defaults in place of core data to store the user data.
 This keeps the users data even after the application gets closed
 
+
 ## App icon 
 <img src = "Scrnshots/appIcon.png" width = 500>
 
@@ -17,3 +18,6 @@ This keeps the users data even after the application gets closed
 
 ## Add task view in light mode
 <img src = "Scrnshots/addtaskLight.png" width = 500>
+
+## App walkthrough
+The app walkthrough has been saved in the screen recod folder
