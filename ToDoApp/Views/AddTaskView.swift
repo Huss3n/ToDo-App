@@ -22,11 +22,8 @@ struct AddTaskView: View {
                 HStack {
                     Text("Add task 🖊️")
                         .font(.title2).bold()
-                        .padding(.vertical,-2)
-                        .padding(.horizontal)
                     Spacer()
-                }
-                .padding()
+                } 
                 TextField("Add new task", text: $newTask)
                     .padding(.horizontal)
                     .frame(height: 50)
