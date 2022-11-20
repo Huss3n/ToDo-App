@@ -15,14 +15,7 @@
 import SwiftUI
 
 struct ListView: View {
-    
-    @State var items:[TasksModel] = [
-        TasksModel(title: "First title", isCompleted: false),
-        TasksModel(title: "Second title", isCompleted: false),
-        TasksModel(title: "Third task", isCompleted: true)
-
-    ]
-    
+    @EnvironmentObject var listViewModel: ListViewModel
     var body: some View {
         VStack{
             HStack {
@@ -33,12 +26,18 @@ struct ListView: View {
             }
             .padding(.vertical, -10)
             List{
-                ForEach(items) { item in
+                ForEach(listViewModel.items) { item in
                     Lists(task: item)
+                        .onTapGesture {
+                            withAnimation(.linear){
+                                listViewModel.updateTask(item: item)
+                            }
+                        }
                 }
+                .onDelete(perform: listViewModel.deleteItem)
+                .onMove(perform:listViewModel.moveItem)
             }
         }
-        
         .listStyle(.plain)
         .toolbar{
             ToolbarItem(placement: .navigationBarLeading) {
@@ -50,11 +49,9 @@ struct ListView: View {
                 }
             }
         }
-        //        .navigationTitle("Todo List 📝")
         .navigationBarTitleDisplayMode(.inline)
-        
-        
     }
+    
 }
 
 struct ListView_Previews: PreviewProvider {
@@ -62,5 +59,6 @@ struct ListView_Previews: PreviewProvider {
         NavigationStack{
             ListView()
         }
+        .environmentObject(ListViewModel())
     }
 }

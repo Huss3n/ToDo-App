@@ -11,7 +11,7 @@ struct Lists: View {
     let task: TasksModel
     var body: some View {
         HStack{
-            Image(systemName: task.isCompleted ? "circle" : "checkmark.circle")
+            Image(systemName: task.isCompleted ? "checkmark.circle" : "circle")
                 .foregroundColor(task.isCompleted ? .green : .red)
             Text(task.title)
             Spacer()
