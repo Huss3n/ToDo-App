@@ -18,22 +18,15 @@ struct ListView: View {
     @EnvironmentObject var listViewModel: ListViewModel
     var body: some View {
         ZStack{
-            HStack {
-                Text("Todo List 📝")
-                    .padding(.horizontal, 10)
-                    .padding(.vertical, 30)
-                    .font(.title).bold()
-                    .offset(x: 0, y: -350)
-                
-                Spacer()
-            }
+            Color("Background")
+                .ignoresSafeArea()
             if listViewModel.items.isEmpty{
                 NoTasksView()
                     .transition(AnyTransition.opacity.animation(.easeInOut))
             }else{
                 List{
                     ForEach(listViewModel.items) { item in
-                        Lists(task: item)
+                        Lists(task: item).listRowBackground(Color("Background"))
                             .onTapGesture {
                                 withAnimation(.linear){
                                     listViewModel.updateTask(item: item)
@@ -43,7 +36,6 @@ struct ListView: View {
                     .onDelete(perform: listViewModel.deleteItem)
                     .onMove(perform:listViewModel.moveItem)
                 }
-                
                 .listStyle(.plain)
             }
         }
@@ -57,7 +49,8 @@ struct ListView: View {
                 }
             }
         }
-        //        .navigationTitle("ToDo List 📝")
+                .navigationTitle("ToDo List 📝")
+                .navigationBarTitleDisplayMode(.inline)
     }
     
 }
