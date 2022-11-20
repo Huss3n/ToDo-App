@@ -17,28 +17,36 @@ import SwiftUI
 struct ListView: View {
     @EnvironmentObject var listViewModel: ListViewModel
     var body: some View {
-        VStack{
+        ZStack{
             HStack {
-                Text("To do list 📝")
+                Text("Todo List 📝")
+                    .padding(.horizontal, 10)
+                    .padding(.vertical, 30)
                     .font(.title).bold()
-                    .padding()
+                    .offset(x: 0, y: -350)
+                
                 Spacer()
             }
-            .padding(.vertical, -10)
-            List{
-                ForEach(listViewModel.items) { item in
-                    Lists(task: item)
-                        .onTapGesture {
-                            withAnimation(.linear){
-                                listViewModel.updateTask(item: item)
+            if listViewModel.items.isEmpty{
+                NoTasksView()
+                    .transition(AnyTransition.opacity.animation(.easeInOut))
+            }else{
+                List{
+                    ForEach(listViewModel.items) { item in
+                        Lists(task: item)
+                            .onTapGesture {
+                                withAnimation(.linear){
+                                    listViewModel.updateTask(item: item)
+                                }
                             }
-                        }
+                    }
+                    .onDelete(perform: listViewModel.deleteItem)
+                    .onMove(perform:listViewModel.moveItem)
                 }
-                .onDelete(perform: listViewModel.deleteItem)
-                .onMove(perform:listViewModel.moveItem)
+                
+                .listStyle(.plain)
             }
         }
-        .listStyle(.plain)
         .toolbar{
             ToolbarItem(placement: .navigationBarLeading) {
                 EditButton()
@@ -49,7 +57,7 @@ struct ListView: View {
                 }
             }
         }
-        .navigationBarTitleDisplayMode(.inline)
+        //        .navigationTitle("ToDo List 📝")
     }
     
 }

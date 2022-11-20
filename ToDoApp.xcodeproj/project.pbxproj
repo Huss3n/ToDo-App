@@ -15,6 +15,7 @@
 		D70444EB292A2E9C000E9FC3 /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70444EA292A2E9C000E9FC3 /* AddTaskView.swift */; };
 		D70444EE292A3815000E9FC3 /* TasksModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70444ED292A3815000E9FC3 /* TasksModel.swift */; };
 		D78E3A8B292A5041009C8558 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78E3A8A292A5041009C8558 /* ListViewModel.swift */; };
+		D78E3A8E292A734D009C8558 /* NoTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78E3A8D292A734D009C8558 /* NoTasksView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		D70444EA292A2E9C000E9FC3 /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
 		D70444ED292A3815000E9FC3 /* TasksModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksModel.swift; sourceTree = "<group>"; };
 		D78E3A8A292A5041009C8558 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		D78E3A8D292A734D009C8558 /* NoTasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoTasksView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 			children = (
 				D70444E5292A274A000E9FC3 /* ListView.swift */,
 				D70444EA292A2E9C000E9FC3 /* AddTaskView.swift */,
+				D78E3A8D292A734D009C8558 /* NoTasksView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D70444E6292A274A000E9FC3 /* ListView.swift in Sources */,
+				D78E3A8E292A734D009C8558 /* NoTasksView.swift in Sources */,
 				D70444EE292A3815000E9FC3 /* TasksModel.swift in Sources */,
 				D78E3A8B292A5041009C8558 /* ListViewModel.swift in Sources */,
 				D70359502928186400547AC5 /* ToDoAppApp.swift in Sources */,
