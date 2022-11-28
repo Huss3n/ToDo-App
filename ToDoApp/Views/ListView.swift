@@ -38,6 +38,50 @@ struct ListView: View {
                 }
                 .listStyle(.plain)
             }
+            VStack{
+                HStack {
+                    Text("Todo Categories")
+                        .font(.title2)
+                        .padding()
+                    Spacer()
+                }
+                .padding()
+                HStack(spacing: 45){
+                    VStack(spacing: 10){
+                        Image(systemName: "book.fill")
+                            .font(.system(size: 35))
+                            .foregroundColor(.blue)
+                            .shadow(color: .gray, radius: 1, x: 0, y: 0)
+                        Text("School")
+                            .padding(.vertical, 4)
+                    }
+                    VStack(spacing: 10){
+                        Image(systemName: "playstation.logo")
+                            .font(.system(size: 35))
+                            .foregroundColor(.blue)
+                            .shadow(color: .gray, radius: 1, x: 0, y: 0)
+                        Text("Holiday")
+                            .padding(.vertical, 4)
+                    }
+                    VStack(spacing: 10){
+                        Image(systemName: "dollarsign.square")
+                            .font(.system(size: 35))
+                            .foregroundColor(.blue)
+                            .shadow(color: .gray, radius: 1, x: 0, y: 0)
+                        Text("Business")
+                            .padding(.vertical, 4)
+                    }
+                    VStack(spacing: 10){
+                        Image(systemName: "bag")
+                            .font(.system(size: 35))
+                            .foregroundColor(.blue)
+                            .shadow(color: .gray, radius: 1, x: 0, y: 0)
+                        Text("Shopping")
+                            .padding(.vertical, 4)
+                    }
+                }
+                .font(.subheadline)
+            }
         }
         .toolbar{
             ToolbarItem(placement: .navigationBarLeading) {
@@ -49,8 +93,8 @@ struct ListView: View {
                 }
             }
         }
-                .navigationTitle("ToDo List 📝")
-                .navigationBarTitleDisplayMode(.inline)
+        .navigationTitle("ToDo List 📝")
+        .navigationBarTitleDisplayMode(.inline)
     }
     
 }
